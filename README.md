@@ -7,3 +7,39 @@ Since microcontrollers have limitted resources compared to desktops, latops and 
 
 ![Overview](https://user-images.githubusercontent.com/82255334/121970873-0fe91500-cdaa-11eb-9848-0f94a02903e4.png)
 
+## Model Training
+As mentioned before, we train our model using Tensor Flow platform. To train the model, we need to provide sufficient enough of data to the network for analyzing and prediction. We use MNISt dataset which is the database of handwritten digits that consist of a training set of 60,000 examples, and a test set of 10,000 examples. The digits have been size-normalized and centered in a fixed-size image.
+
+```
+mnist = tf.keras.datasets.mnist
+(image_train, digit_train), (image_test, digit_test) = mnist.load_data()
+```
+
+Then, we normalize the input train and test image data into the range of 0 to 1, so that each input parameter has a similar data distribution to make convergence faster while training the network.
+
+```
+image_train = tf.keras.utils.normalize(image_train, axis=1)
+image_test = tf.keras.utils.normalize(image_test, axis=1)
+```
+
+
+
+```
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Flatten(input_shape=(28,28)))
+model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
+#model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(units=10, activation=tf.nn.softmax))
+```
+
+
+```
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.fit(image_train, digit_train, epochs=3)
+
+loss, accuracy = model.evaluate(image_test, digit_test)
+print(loss)
+print(accuracy)
+
+model.save('digits.model')
+```
