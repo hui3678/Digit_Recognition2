@@ -45,7 +45,23 @@ print(accuracy)
 
 ![Trained_accuracy](https://user-images.githubusercontent.com/82255334/122112165-1d0e0e80-ce53-11eb-9616-0649d965fca4.png)
 
+The trained model is saved and converted into Keras (.h5) and TensorFLow Lite (.tflite) format files.
 
-
-model.save('digits.model')
 ```
+model.save('digits.model')
+
+# write keras save file
+keras_file = "Digit_recognition.h5"
+keras.models.save_model(model, keras_file)
+convert_bytes(get_file_size(keras_file), "MB")
+
+# Convert keras file to tensorflow lite
+TF_Lite_Model_file = "Digit_recognition.tflite"
+TF_Lite_Converter = tf.lite.TFLiteConverter.from_keras_model(model)
+TFLite_model = TF_Lite_Converter.convert()
+TFLIte_model_name = TF_Lite_Model_file
+open(TFLIte_model_name, "wb").write(TFLite_model)
+convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
+```
+
+
