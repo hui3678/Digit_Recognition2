@@ -68,5 +68,5 @@ convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 The X-CUBE-AI core engine is part of the X-CUBE-AI Expansion Package. It provides an automatic and advanced NN mapping tool to generate and deploy an optimized and robust C-model implementation of a pre-trained Neural Network for the embedded systems with limited and constrained hardware resources. The generated STM32 NN library (both specialized
 and generic parts) can be directly integrated in an IDE project or makefile-based build system 【】. 
 
-We use X-CUBE-AI to generate our C-model by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. Refer to the link https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0 
+We use X-CUBE-AI to generate our C-model by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. Refer to this tutorial
 
