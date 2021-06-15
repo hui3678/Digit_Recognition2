@@ -64,7 +64,7 @@ open(TFLIte_model_name, "wb").write(TFLite_model)
 convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 ```
 
-## Deployment to STM32
+## Generating C-model using X-CUBE-AI
 The X-CUBE-AI core engine is part of the X-CUBE-AI Expansion Package. It provides an automatic and advanced NN mapping tool to generate and deploy an optimized and robust C-model implementation of a pre-trained Neural Network for the embedded systems with limited and constrained hardware resources. The generated STM32 NN library (both specialized
 and generic parts) can be directly integrated in an IDE project or makefile-based build system 【】.
 
@@ -74,3 +74,4 @@ Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-gettin
 
 The header file digit_recognition_model.h consists of declaration on the input and ouput tensor size as well as tensor dimension (width, height and channel). It also consists of declaration of the main NN functions used to run reference. The digit_recognition_model.c consists of declaration on the weights and biases parameters of the network. The digit_recognition_model_data.c file is where our neural network which consists of huge array of weights stored in. The digit_recognition_model_data.h file consists of functions that initialize the pointer to our activations and weights.
 
+## Run Inference for digit recognition
