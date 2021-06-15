@@ -64,20 +64,9 @@ open(TFLIte_model_name, "wb").write(TFLite_model)
 convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 ```
 
-## Install X-CUBE-AI
-In STM32CubeIDE, click Help > Manage embedded software packages. In the pop-up window, select the STMicroelectronics tab. At X-CUBE-AI, click the drop down arrow and check the most recent version of the Artificial Intelligence package. Click Install Now.
+## Deployment to STM32
+The X-CUBE-AI core engine is part of the X-CUBE-AI Expansion Package. It provides an automatic and advanced NN mapping tool to generate and deploy an optimized and robust C-model implementation of a pre-trained Neural Network for the embedded systems with limited and constrained hardware resources. The generated STM32 NN library (both specialized
+and generic parts) can be directly integrated in an IDE project or makefile-based build system 【】. 
 
-
-![X-Cube_AI_Install](https://user-images.githubusercontent.com/82255334/122119375-af1a1500-ce5b-11eb-8e5a-600645f50fdd.png)
-
-
-## Project Configuration
-To start a new project, click File > New > STM32 Project. In the Target Selection window, click on the Board Selector tab and search for your development board. Select your board in the Board List.
-
-![Board_select](https://user-images.githubusercontent.com/82255334/122120910-9448a000-ce5d-11eb-8b7a-f45b43f5c605.png)
-
-Click Next. Give your project a name and leave the other options as default (we can use C with X-CUBE-AI).
-
-![Create_Project](https://user-images.githubusercontent.com/82255334/122124211-8e54be00-ce61-11eb-9a2d-761da6658694.PNG)
-
+We use X-CUBE-AI to generate our C-model by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. Refer to the link https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0 
 
