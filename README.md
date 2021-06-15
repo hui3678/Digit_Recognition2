@@ -70,6 +70,10 @@ and generic parts) can be directly integrated in an IDE project or makefile-base
 
 Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0), install the X-CUBE-AI, and create the project. Then, we generate our C-model with STM32 NN library by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. After generating the C-model, we should see 5 files in our working directory. Since our network's name is digit_recognition_model, the 5 files generated are digit_recognition_model.h, digit_recognition_model.c, digit_recognition_model_data.h, digit_recognition_model_data.c and digit_recognition_model_config.h.
 
+[Graphic.pptx](https://github.com/hui3678/Digit_Recognition2/files/6659082/Graphic.pptx)
+
+
+
 
 
 
