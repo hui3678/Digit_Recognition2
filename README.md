@@ -68,6 +68,8 @@ convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 The X-CUBE-AI core engine is part of the X-CUBE-AI Expansion Package. It provides an automatic and advanced NN mapping tool to generate and deploy an optimized and robust C-model implementation of a pre-trained Neural Network for the embedded systems with limited and constrained hardware resources. The generated STM32 NN library (both specialized
 and generic parts) can be directly integrated in an IDE project or makefile-based build system 【】.
 
-Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0), install the X-CUBE-AI, and create the project.  Then we generate our C-model by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. 
+Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0), install the X-CUBE-AI, and create the project. Then, we generate our C-model with STM32 NN library by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. After generating the C-model, we should see 5 files in our working directory. Since our network's name is digit_recognition_model, the 5 files generated are digit_recognition_model.h, digit_recognition_model.c, digit_recognition_model_data.h, digit_recognition_model_data.c and digit_recognition_model_config.h.
+
+
 
 
