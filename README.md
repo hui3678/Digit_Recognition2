@@ -64,4 +64,14 @@ open(TFLIte_model_name, "wb").write(TFLite_model)
 convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 ```
 
+## Install X-CUBE-AI
+In STM32CubeIDE, click Help > Manage embedded software packages. In the pop-up window, select the STMicroelectronics tab. Click the drop-down arrow by X-CUBE-AI and check the most recent version of the Artificial Intelligence package. Click Install Now.
+
+
+![X-Cube_AI_Install](https://user-images.githubusercontent.com/82255334/122119375-af1a1500-ce5b-11eb-8e5a-600645f50fdd.png)
+
+
+## Project Configuration
+
+
 
