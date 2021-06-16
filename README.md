@@ -268,6 +268,10 @@ The results are shown as following.
 | Input | Output |
 |:------:|:------:|
 |1|7|
+|2|4|
+|3|7|
+
+
 
 
 
