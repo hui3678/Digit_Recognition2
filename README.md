@@ -1,11 +1,17 @@
 # Digit Recognition on STM32 with X-CUBE-AI
 ## Introduction
+### Optical Character Recognition (OCR)
+Optical Character Recognition (OCR) involves digitized scanning and recognition of written or printed text. The conversion of hard copy contents into editable and computer readable digital files allowing automatic processing, searching, mining, easy backup facilities, and eliminate the need for physical storage of printed documents. This systems play important roles on many data entry applications and information retrieval systems such as search engines. This helps to improve productivity of a business by facilitating high speed and accuracy data retrieval from many scanned documents.
+
+### Tiny machine learning (TinyML)
 Tiny machine learning (TinyML) is a concept of embedding artificial intelligence on a small pieces of harware. With TinyML, it is possible to deploy the machine learning algorithm to train the network on device and shrink their size to an optimazation form for embedded device without the need of sending the data for cloud computing. Many problems regarding the significance of computing capabilities on data analyzing such as storage capacity, limited central processing unit (CPU) and reduced database performance can be solved through added latency from TinyML. In this tutorial, we will show you how we create a neutal network model using TensorFlow platform and deploy the pre-trained model into STM32F446 chip to run inference for digit recognition.
 
 ## Overview
 Since microcontrollers have limitted resources compared to desktops, latops and servers, it is necessary to perform model training on a seperate computer before tranferring the model into the microcontroller. We create our model using python script with TensorFlow library and train our model in the computer’s CPU. After that, trained model is saved and converted into TensorFlow Lite and Keras format. The Keras or TensorFLow Lite model file is then imported into the X-CUBE-AI core engine which is the expansion software package of STM32CubeX to generate optimised C-model for STM32 board. Once the model is loaded onto the microcontroller, we can write code to perform inference for digit recognition.
 
 ![Overview](https://user-images.githubusercontent.com/82255334/121970873-0fe91500-cdaa-11eb-9848-0f94a02903e4.png)
+
+## 
 
 ## Model Training
 As mentioned before, our model is trained using Tensor Flow platform. To train the model, sufficient enough of data is needed to be provided to the network for analyzing and prediction. MNISt dataset is used which is the database of handwritten digits that consist of a training set of 60,000 examples, and a test set of 10,000 examples. The digits have been size-normalized and centered in a fixed-size image.
@@ -31,6 +37,8 @@ model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
 model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
 model.add(tf.keras.layers.Dense(units=10, activation=tf.nn.softmax))
 ```
+
+![NN_layer](https://user-images.githubusercontent.com/82255334/122304671-2de48000-cf38-11eb-85f1-ac7e1b4373fa.png)
 
 Then, the model is trained in 3 epochs which means 3 iterations have run for network training. The results are evaluated by printing the loss and accuracy of the output. Since, the loss and accuracy is 0.09 annd 0.97 respectively, the model is good enough to be used.
 
