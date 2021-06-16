@@ -182,12 +182,10 @@ int main(void)
     HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
     while(1);
   }
-
+	 // Fill input buffer (use test value)
 	 for (uint32_t i = 0; i < AI_DIGIT_RECOGNITION_MODEL_IN_1_SIZE; i++)
 	 {
-		//x = DIGIT_IMG_DATA_3[i];
-		//x = (unsigned char) x >> 1;
-	   ((ai_float *)in_data)[i] = (ai_float)x;
+	   ((ai_float *)in_data)[i] = (ai_float)DIGIT_IMG_DATA_3[i];
 	 }
 
 	 // Get current timestamp
@@ -223,7 +221,6 @@ int main(void)
 
   while (1)
   {
-	 // Fill input buffer (use test value)
 
     /* USER CODE END WHILE */
 
