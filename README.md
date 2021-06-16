@@ -66,7 +66,7 @@ convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 
 ## Generating C-model using X-CUBE-AI
 The X-CUBE-AI core engine is part of the X-CUBE-AI Expansion Package. It provides an automatic and advanced NN mapping tool to generate and deploy an optimized and robust C-model implementation of a pre-trained Neural Network for the embedded systems with limited and constrained hardware resources. The generated STM32 NN library (both specialized
-and generic parts) can be directly integrated in an IDE project or makefile-based build system 【】.
+and generic parts) can be directly integrated in an IDE project or makefile-based build system. The user manual of X-CUBE-AI can be referred in [this link](https://www.st.com/resource/en/user_manual/dm00570145-getting-started-with-xcubeai-expansion-package-for-artificial-intelligence-ai-stmicroelectronics.pdf).
 
 Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0), install the X-CUBE-AI, and create the project. Then, we generate our C-model with STM32 NN library by importing the pre-trained Keras or TensorFlow Lite model file into the X-CUBE-AI core engine. After generating the C-model, we should see 5 files in our working directory. Since our network's name is digit_recognition_model, the 5 files generated are digit_recognition_model.h, digit_recognition_model.c, digit_recognition_model_data.h, digit_recognition_model_data.c and digit_recognition_model_config.h.
 
@@ -263,7 +263,7 @@ The results are shown as following.
 ![PuTTY_Result](https://user-images.githubusercontent.com/82255334/122296927-94b06c00-cf2d-11eb-96c8-365f5456bb98.PNG)
 
 ## Validation on results
-3 sample images of handwritten digit are used to test the accuracy of the output. 
+3 sample images of handwritten digit are used to test the accuracy of the output. The output as shown as following.
 
 | Input | Output |
 |:------:|:------:|
@@ -271,7 +271,9 @@ The results are shown as following.
 |2|4|
 |3|7|
 
+Since the output is not match with the input, our model deployment is considered failed to achieve our goal.
 
+## 
 
 
 
