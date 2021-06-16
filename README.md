@@ -262,8 +262,12 @@ The results are shown as following.
 
 ![PuTTY_Result](https://user-images.githubusercontent.com/82255334/122296927-94b06c00-cf2d-11eb-96c8-365f5456bb98.PNG)
 
+## Validation on results
+3 sample images of handwritten digit are used to test the accuracy of the output. 
 
-
+| Input | Output |
+|:------:|:------:|
+|1|7|
 
 
 
