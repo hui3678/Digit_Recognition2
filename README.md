@@ -75,7 +75,7 @@ Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-gettin
 The header file digit_recognition_model.h consists of declaration on the input and ouput tensor size as well as tensor dimension (width, height and channel). It also consists of declaration of the main NN functions used to run reference. The digit_recognition_model.c consists of declaration on the weights and biases parameters of the network. The digit_recognition_model_data.c file is where our neural network which consists of huge array of weights stored in. The digit_recognition_model_data.h file consists of functions that initialize the pointer to our activations and weights.
 
 ## Run Inference for digit recognition
-The following code is written in main.c to perform inference for digit recognition on NUCLEO-F446RE. The sample image data is converted into 1D array before feed into the data buffer for analyzing.
+The following code is written in main.c to perform inference for digit recognition on NUCLEO-F446RE. The sample image data is converted into 1D array before feed into the data buffer for analyzing. 
 
 ```
 int main(void)
@@ -253,6 +253,11 @@ print(image.shape)
 print("inputs.h file created..\n")
 np.savetxt(outname, npimage[None], fmt='%d',delimiter=',', header='#define DIGIT_IMG_DATA {', footer='}\n',comments='')
 ```
+
+With the guide of [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0), the program is sucessfullly run. The result can be seen by using serial monitor terminal PuTTY. Since USART is used for serial communication, the baud rate need to set as 115200 bits per second at PuTTY to capture the output data.
+
+![PuTTY_115200](https://user-images.githubusercontent.com/82255334/122294573-c542d680-cf2a-11eb-8963-70090836c682.PNG)
+
 
 
 
