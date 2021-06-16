@@ -16,10 +16,14 @@ Since microcontrollers have limitted resources compared to desktops, latops and 
 An open source library for numerical computation and large-scale machine learning.
 
 ### NUCLEO-F446RE
-STMicroelectronics Development Boards used to build our prototypes.
+STMicroelectronics Development Boards used to build our prototypes. The STM32 Nucleo-64 board provides an affordable and flexible way for users to try out new concepts and build prototypes by choosing from the various combinations of performance and power consumption features, provided by the STM32 microcontroller. For the compatible boards, the external SMPS significantly reduces power consumption in Run mode. The ARDUINO® Uno V3 connectivity support and the ST morpho headers allow the easy expansion of the functionality of the STM32 Nucleo open development platform with a wide choice of specialized shields. The STM32 Nucleo-64 board does not require any separate probe as it integrates the ST-LINK debugger/programmer. The STM32 Nucleo-64 board comes with the STM32 comprehensive free software libraries and examples available with the STM32Cube MCU Package. The spec documents can be found in [this link](https://www.st.com/en/evaluation-tools/nucleo-f446re.html).
+
+![NUCLEO-F446RE](https://user-images.githubusercontent.com/82255334/122306108-7e5cdd00-cf3a-11eb-8852-2993e966b902.PNG)
 
 ### STM32CubeIDE
 Advanced development platform with peripheral configuration, code generation, code compilation and debug features for microcontrollers.
+
+![STM32CubeIDE](https://user-images.githubusercontent.com/82255334/122306271-b7954d00-cf3a-11eb-8a08-2fed20d43359.PNG)
 
 ## Model Training
 As mentioned before, our model is trained using Tensor Flow platform. To train the model, sufficient enough of data is needed to be provided to the network for analyzing and prediction. MNISt dataset is used which is the database of handwritten digits that consist of a training set of 60,000 examples, and a test set of 10,000 examples. The digits have been size-normalized and centered in a fixed-size image.
