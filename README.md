@@ -75,7 +75,7 @@ Refer to [this tutorial](https://www.digikey.com/en/maker/projects/tinyml-gettin
 The header file digit_recognition_model.h consists of declaration on the input and ouput tensor size as well as tensor dimension (width, height and channel). It also consists of declaration of the main NN functions used to run reference. The digit_recognition_model.c consists of declaration on the weights and biases parameters of the network. The digit_recognition_model_data.c file is where our neural network which consists of huge array of weights stored in. The digit_recognition_model_data.h file consists of functions that initialize the pointer to our activations and weights.
 
 ## Run Inference for digit recognition
-The following code is written in main.c to perform inference for digit recognition on NUCLEO-F446RE. 
+The following code is written in main.c to perform inference for digit recognition on NUCLEO-F446RE. The sample image data is converted into 1D array before feed into the data buffer for analyzing.
 
 ```
 int main(void)
@@ -229,4 +229,6 @@ int main(void)
   /* USER CODE END 3 */
 }
 ```
+
+
 
