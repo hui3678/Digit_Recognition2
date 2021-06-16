@@ -11,7 +11,15 @@ Since microcontrollers have limitted resources compared to desktops, latops and 
 
 ![Overview](https://user-images.githubusercontent.com/82255334/121970873-0fe91500-cdaa-11eb-9848-0f94a02903e4.png)
 
-## 
+## Tool Used
+### TensorFlow
+An open source library for numerical computation and large-scale machine learning.
+
+### NUCLEO-F446RE
+STMicroelectronics Development Boards used to build our prototypes.
+
+### STM32CubeIDE
+Advanced development platform with peripheral configuration, code generation, code compilation and debug features for microcontrollers.
 
 ## Model Training
 As mentioned before, our model is trained using Tensor Flow platform. To train the model, sufficient enough of data is needed to be provided to the network for analyzing and prediction. MNISt dataset is used which is the database of handwritten digits that consist of a training set of 60,000 examples, and a test set of 10,000 examples. The digits have been size-normalized and centered in a fixed-size image.
