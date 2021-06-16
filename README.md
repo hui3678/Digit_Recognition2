@@ -33,6 +33,8 @@ mnist = tf.keras.datasets.mnist
 (image_train, digit_train), (image_test, digit_test) = mnist.load_data()
 ```
 
+![MNIST](https://user-images.githubusercontent.com/82255334/122306997-07c0df00-cf3c-11eb-95f3-61e54cec9bcc.png)
+
 Then, the input train and test image data is normalized into the range of 0 to 1, so that each input parameter has a similar data distribution to make convergence faster while training the network.
 
 ```
