@@ -230,7 +230,7 @@ int main(void)
 }
 ```
 
-The image data is converted into 1D array using the code and run in other platform outside from the STM32CubdeIDE as following.
+The image data is converted into 1D array using the code as following. The code is run in other platform outside from the STM32CubdeIDE. 
 
 ```
 #Convert a .png file to image buffer. 
