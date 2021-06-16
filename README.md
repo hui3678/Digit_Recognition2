@@ -273,7 +273,6 @@ The results are shown as following.
 
 Since the output is not match with the input, our model deployment is considered failed to achieve our goal.
 
-## 
-
-
+## Conclusion and Discussion
+The project is considered failed since the model incapable to give accurate result on digit recognition after deployment to STM32. The failure is suspected to be the incorrect generated Input Tensor dimension since the dimension suppose to be height=28, width=28, channel=1, however, the generated input Tensor dimension is height=28, width=1, channel=28. This mmay cause the image to be wrongly analysed in the network.
 
