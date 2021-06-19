@@ -86,6 +86,8 @@ open(TFLIte_model_name, "wb").write(TFLite_model)
 convert_bytes(get_file_size(TF_Lite_Model_file), "KB")
 ```
 
+The full python script of creating the model is in "Digit_recognition.py" and is uploaded in python folder.
+
 ## Generating C-model using X-CUBE-AI
 The X-CUBE-AI core engine is part of the X-CUBE-AI Expansion Package. It provides an automatic and advanced NN mapping tool to generate and deploy an optimized and robust C-model implementation of a pre-trained Neural Network for the embedded systems with limited and constrained hardware resources. The generated STM32 NN library (both specialized
 and generic parts) can be directly integrated in an IDE project or makefile-based build system. The user manual of X-CUBE-AI can be referred in [this link](https://www.st.com/resource/en/user_manual/dm00570145-getting-started-with-xcubeai-expansion-package-for-artificial-intelligence-ai-stmicroelectronics.pdf).
@@ -252,7 +254,7 @@ int main(void)
 }
 ```
 
-The image data is converted into 1D array using the code as following. The code is run in other platform outside from the STM32CubdeIDE. 
+The image data is converted into 1D array using the code as following. The code is run in other platform outside from the STM32CubdeIDE. The full script is saved in "mnist_png_to_array.py" and uploaded in python folder.
 
 ```
 #Convert a .png file to image buffer. 
