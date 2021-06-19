@@ -1,0 +1,128 @@
+Neural Network Tools for STM32AI v1.4.1 (STM.ai v6.0.0-RC6)
+Created date       : 2021-05-14 09:35:19
+Parameters         : generate --name digit_recognition_model -m C:/Users/User/Documents/UTM Master/Study/Sem1/MKEL1123-ADVANCED MICROPROCESSOR SYSTEM/Program/Digit_recognition.tflite --type tflite --compression 1 --verbosity 1 --workspace C:\Users\User\AppData\Local\Temp\mxAI_workspace189935219409009049911862364022389 --output C:\Users\User\.stm32cubemx
+
+Exec/report summary (generate)
+------------------------------------------------------------------------------------------------------------------------
+model file         : C:\Users\User\Documents\UTM Master\Study\Sem1\MKEL1123-ADVANCED MICROPROCESSOR SYSTEM\Program\Digit_recognition.tflite
+type               : tflite
+c_name             : digit_recognition_model
+compression        : None
+quantize           : None
+workspace dir      : C:\Users\User\AppData\Local\Temp\mxAI_workspace189935219409009049911862364022389
+output dir         : C:\Users\User\.stm32cubemx
+
+model_name         : Digit_recognition
+model_hash         : 3f627d591177fb324adea71a587c0f33
+input              : flatten_input [784 items, 3.06 KiB, ai_float, FLOAT32, (28, 1, 28)]
+inputs (total)     : 3.06 KiB
+output             : nl_4 [10 items, 40 B, ai_float, FLOAT32, (1, 1, 10)]
+outputs (total)    : 40 B
+params #           : 118,282 items (462.04 KiB)
+macc               : 118,688
+weights (ro)       : 473,128 B (462.04 KiB) 
+activations (rw)   : 1,024 B (1024 B) 
+ram (total)        : 4,200 B (4.10 KiB) = 1,024 + 3,136 + 40
+
+Model name - Digit_recognition ['flatten_input'] ['nl_4']
+--------------------------------------------------------------------------------------------------------------------------
+id   layer (type)             shape          param/size        macc      connected to    |   c_size   c_macc   c_type    
+--------------------------------------------------------------------------------------------------------------------------
+0    flatten_input (Input)    (h:28, c:28)                                               |                    
+     reshape_0 (Reshape)      (c:784)                                    flatten_input   |                    
+--------------------------------------------------------------------------------------------------------------------------
+1    dense_1 (Dense)          (c:128)        100,480/401,920   100,480   reshape_0       |                     dense()[0]
+     nl_1_nl (Nonlinearity)   (c:128)                          128       dense_1         |                     nl()[1]   
+--------------------------------------------------------------------------------------------------------------------------
+2    dense_2 (Dense)          (c:128)        16,512/66,048     16,512    nl_1_nl         |                     dense()[2]
+     nl_2_nl (Nonlinearity)   (c:128)                          128       dense_2         |                     nl()[3]   
+--------------------------------------------------------------------------------------------------------------------------
+3    dense_3 (Dense)          (c:10)         1,290/5,160       1,290     nl_2_nl         |                     dense()[4]
+--------------------------------------------------------------------------------------------------------------------------
+4    nl_4 (Nonlinearity)      (c:10)                           150       dense_3         |                     nl()/o[5] 
+--------------------------------------------------------------------------------------------------------------------------
+model/c-model: macc=118,688/118,688  weights=473,128/473,128  activations=--/1,024 io=--/3,176
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name         : digit_recognition
+c-name             : digit_recognition_model
+c-node #           : 6
+c-array #          : 13
+activations size   : 1024
+weights size       : 473128
+macc               : 118688
+inputs             : ['flatten_input_output_array']
+outputs            : ['nl_4_output_array']
+
+
+C-Arrays (13)
+------------------------------------------------------------------------------------------------------------------------
+c_id  name (*_array)        item/size           mem-pool     c-type       fmt    comment            
+------------------------------------------------------------------------------------------------------------------------
+0     flatten_input_output  784/3136            user         float        float  /input             
+1     dense_1_output        128/512             activations  float        float                     
+2     nl_1_nl_output        128/512             activations  float        float                     
+3     dense_2_output        128/512             activations  float        float                     
+4     nl_2_nl_output        128/512             activations  float        float                     
+5     dense_3_output        10/40               activations  float        float                     
+6     nl_4_output           10/40               user         float        float  /output            
+7     dense_1_weights       100352/401408       weights      const float  float                     
+8     dense_1_bias          128/512             weights      const float  float                     
+9     dense_2_weights       16384/65536         weights      const float  float                     
+10    dense_2_bias          128/512             weights      const float  float                     
+11    dense_3_weights       1280/5120           weights      const float  float                     
+12    dense_3_bias          10/40               weights      const float  float                     
+------------------------------------------------------------------------------------------------------------------------
+
+
+C-Layers (6)
+------------------------------------------------------------------------------------------------------------------------
+c_id  name (*_layer)  id  layer_ macc        rom         tensors                   shape (array id)                       
+------------------------------------------------------------------------------------------------------------------------
+0     dense_1         1   dense  100480      401920      I: flatten_input_output0  [1, 1, 1, 784] (0)                     
+                                                         W: dense_1_weights                                               
+                                                         W: dense_1_bias                                                  
+                                                         O: dense_1_output         [1, 1, 1, 128] (1)                     
+------------------------------------------------------------------------------------------------------------------------
+1     nl_1_nl         1   nl     128         0           I: dense_1_output         [1, 1, 1, 128] (1)                     
+                                                         O: nl_1_nl_output         [1, 1, 1, 128] (2)                     
+------------------------------------------------------------------------------------------------------------------------
+2     dense_2         2   dense  16512       66048       I: nl_1_nl_output         [1, 1, 1, 128] (2)                     
+                                                         W: dense_2_weights                                               
+                                                         W: dense_2_bias                                                  
+                                                         O: dense_2_output         [1, 1, 1, 128] (3)                     
+------------------------------------------------------------------------------------------------------------------------
+3     nl_2_nl         2   nl     128         0           I: dense_2_output         [1, 1, 1, 128] (3)                     
+                                                         O: nl_2_nl_output         [1, 1, 1, 128] (4)                     
+------------------------------------------------------------------------------------------------------------------------
+4     dense_3         3   dense  1290        5160        I: nl_2_nl_output         [1, 1, 1, 128] (4)                     
+                                                         W: dense_3_weights                                               
+                                                         W: dense_3_bias                                                  
+                                                         O: dense_3_output         [1, 1, 1, 10] (5)                      
+------------------------------------------------------------------------------------------------------------------------
+5     nl_4            4   nl     150         0           I: dense_3_output         [1, 1, 1, 10] (5)                      
+                                                         O: nl_4_output            [1, 1, 1, 10] (6)                      
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+Complexity report per layer - macc=118,688 weights=473,128 act=1,024 ram_io=3,176
+------------------------------------------------------------------------
+id   name      c_macc                    c_rom                     c_id
+------------------------------------------------------------------------
+1    dense_1   ||||||||||||||||  84.7%   ||||||||||||||||  84.9%   [0] 
+1    nl_1_nl   |                  0.1%   |                  0.0%   [1] 
+2    dense_2   |||               13.9%   |||               14.0%   [2] 
+2    nl_2_nl   |                  0.1%   |                  0.0%   [3] 
+3    dense_3   |                  1.1%   |                  1.1%   [4] 
+4    nl_4      |                  0.1%   |                  0.0%   [5] 
+
+Generated files (5)
+------------------------------------------------------------------------------------------------------------------------
+C:\Users\User\.stm32cubemx\digit_recognition_model_config.h
+C:\Users\User\.stm32cubemx\digit_recognition_model.h
+C:\Users\User\.stm32cubemx\digit_recognition_model.c
+C:\Users\User\.stm32cubemx\digit_recognition_model_data.h
+C:\Users\User\.stm32cubemx\digit_recognition_model_data.c
