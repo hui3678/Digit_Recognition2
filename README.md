@@ -254,7 +254,7 @@ int main(void)
 }
 ```
 
-The image data is converted into 1D array using the code as following. The code is run in other platform outside from the STM32CubdeIDE. The full script is saved in "mnist_png_to_array.py" and uploaded in python folder.
+The image data is converted into 1D array using the code as following. The code is run in other platform outside from the STM32CubeIDE. The full script is saved in "mnist_png_to_array.py" and uploaded in python folder.
 
 ```
 #Convert a .png file to image buffer. 
