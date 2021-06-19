@@ -1,0 +1,9 @@
+digit_recognition_model.c:409:9:digit_recognition_model_configure_activations	24	static
+digit_recognition_model.c:442:9:digit_recognition_model_configure_weights	24	static
+digit_recognition_model.c:481:9:ai_digit_recognition_model_get_info	136	static
+digit_recognition_model.c:527:10:ai_digit_recognition_model_get_error	16	static
+digit_recognition_model.c:533:10:ai_digit_recognition_model_create	24	static
+digit_recognition_model.c:543:11:ai_digit_recognition_model_destroy	16	static
+digit_recognition_model.c:549:9:ai_digit_recognition_model_init	24	static
+digit_recognition_model.c:566:8:ai_digit_recognition_model_run	24	static
+digit_recognition_model.c:573:8:ai_digit_recognition_model_forward	16	static
